@@ -18,7 +18,185 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap"
         rel="stylesheet"
     >
+/* GÜNÜN AKIŞI */
 
+.timeline-section {
+    position: relative;
+    padding: 120px 24px 140px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f3eadc 24%,
+            #d8b28f 58%,
+            #76594d 78%,
+            #2d2927 100%
+        );
+}
+
+.timeline-container {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-header {
+    margin-bottom: 85px;
+    text-align: center;
+}
+
+.timeline-small-title {
+    margin-bottom: 18px;
+    color: var(--zeytin);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.timeline-header h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(52px, 9vw, 90px);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(62, 51, 44, 0.25),
+        rgba(255, 255, 255, 0.55)
+    );
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    min-height: 310px;
+    padding: 20px 55px;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 26px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--kirik-beyaz);
+    border-radius: 50%;
+    background: var(--toprak);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-time {
+    display: block;
+    margin-bottom: 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    line-height: 1;
+}
+
+.timeline-icon {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 26px;
+}
+
+.timeline-item h3 {
+    margin-bottom: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 39px;
+    font-weight: 500;
+}
+
+.timeline-item p {
+    color: rgba(62, 51, 44, 0.75);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.timeline-item.after-item {
+    color: #ffffff;
+}
+
+.timeline-item.after-item p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.timeline-note {
+    display: block;
+    margin-top: 9px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+@media (max-width: 650px) {
+    .timeline-section {
+        padding: 90px 22px 110px;
+    }
+
+    .timeline-header {
+        margin-bottom: 60px;
+    }
+
+    .timeline::before {
+        left: 18px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        min-height: 270px;
+        margin: 0;
+        padding: 15px 10px 50px 60px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 11px;
+        right: auto;
+    }
+
+    .timeline-time {
+        font-size: 48px;
+    }
+
+    .timeline-item h3 {
+        font-size: 34px;
+    }
+}
     <style>
         :root {
             --kirik-beyaz: #f7f4ee;
@@ -39,7 +217,103 @@
         html {
             scroll-behavior: smooth;
         }
+<!-- Günün Akışı -->
+<section class="timeline-section">
+    <div class="timeline-container">
 
+        <div class="timeline-header">
+            <p class="timeline-small-title">
+                22 Ağustos 2026
+            </p>
+
+            <h2>
+                Günün akışı
+            </h2>
+        </div>
+
+        <div class="timeline">
+
+            <!-- İsteme -->
+            <article class="timeline-item">
+                <span class="timeline-dot"></span>
+
+                <span class="timeline-time">
+                    17.00
+                </span>
+
+                <span class="timeline-icon">
+                    ☕
+                </span>
+
+                <h3>
+                    Önce bir kahve
+                </h3>
+
+                <p>
+                    İsteme merasimimiz evimizin bahçesinde,
+                    ailelerimiz ve sevdiklerimizle başlayacak.
+
+                    <span class="timeline-note">
+                        Kahveler bizden, heyecan hepimizden.
+                    </span>
+                </p>
+            </article>
+
+            <!-- Nişan -->
+            <article class="timeline-item">
+                <span class="timeline-dot"></span>
+
+                <span class="timeline-time">
+                    19.00
+                </span>
+
+                <span class="timeline-icon">
+                    ♡
+                </span>
+
+                <h3>
+                    Kutlama zamanı
+                </h3>
+
+                <p>
+                    Nişan törenimiz Basınkent 1 Sitesi'nin
+                    yeşil alanında devam edecek.
+
+                    <span class="timeline-note">
+                        Biraz duygu, bolca mutluluk.
+                    </span>
+                </p>
+            </article>
+
+            <!-- After -->
+            <article class="timeline-item after-item">
+                <span class="timeline-dot"></span>
+
+                <span class="timeline-time">
+                    22.00
+                </span>
+
+                <span class="timeline-icon">
+                    ✦
+                </span>
+
+                <h3>
+                    Gece burada bitmiyor
+                </h3>
+
+                <p>
+                    Aynı yerde müzik, dans, bol ikram
+                    ve alkol standımızla eğlenceye devam ediyoruz.
+
+                    <span class="timeline-note">
+                        Rahat ayakkabılar ve yüksek enerji tavsiye edilir.
+                    </span>
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
         body {
             font-family: "Manrope", sans-serif;
             color: var(--koyu-kahve);
