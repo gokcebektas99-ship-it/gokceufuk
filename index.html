@@ -1,600 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Gökçe & Ufuk | 22 Ağustos 2026</title>
-
-    <!-- Yazı tipleri -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap"
-        rel="stylesheet"
-    >
-/* GÜNÜN AKIŞI */
-
-.timeline-section {
-    position: relative;
-    padding: 120px 24px 140px;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff 0%,
-            #f3eadc 24%,
-            #d8b28f 58%,
-            #76594d 78%,
-            #2d2927 100%
-        );
-}
-
-.timeline-container {
-    width: min(760px, 100%);
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.timeline-header {
-    margin-bottom: 85px;
-    text-align: center;
-}
-
-.timeline-small-title {
-    margin-bottom: 18px;
-    color: var(--zeytin);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.timeline-header h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(52px, 9vw, 90px);
-    font-weight: 500;
-    line-height: 1;
-}
-
-.timeline {
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
-    left: 50%;
-    width: 1px;
-    background: linear-gradient(
-        to bottom,
-        rgba(62, 51, 44, 0.25),
-        rgba(255, 255, 255, 0.55)
-    );
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    position: relative;
-    width: 50%;
-    min-height: 310px;
-    padding: 20px 55px;
-}
-
-.timeline-item:nth-child(odd) {
-    margin-right: auto;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: auto;
-    text-align: left;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 26px;
-    width: 15px;
-    height: 15px;
-    border: 3px solid var(--kirik-beyaz);
-    border-radius: 50%;
-    background: var(--toprak);
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.15);
-}
-
-.timeline-item:nth-child(odd) .timeline-dot {
-    right: -8px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    left: -8px;
-}
-
-.timeline-time {
-    display: block;
-    margin-bottom: 15px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 58px;
-    line-height: 1;
-}
-
-.timeline-icon {
-    display: block;
-    margin-bottom: 16px;
-    font-size: 26px;
-}
-
-.timeline-item h3 {
-    margin-bottom: 10px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 39px;
-    font-weight: 500;
-}
-
-.timeline-item p {
-    color: rgba(62, 51, 44, 0.75);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.timeline-item.after-item {
-    color: #ffffff;
-}
-
-.timeline-item.after-item p {
-    color: rgba(255, 255, 255, 0.72);
-}
-
-.timeline-note {
-    display: block;
-    margin-top: 9px;
-    font-size: 13px;
-    font-style: italic;
-}
-
-@media (max-width: 650px) {
-    .timeline-section {
-        padding: 90px 22px 110px;
-    }
-
-    .timeline-header {
-        margin-bottom: 60px;
-    }
-
-    .timeline::before {
-        left: 18px;
-    }
-
-    .timeline-item,
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        width: 100%;
-        min-height: 270px;
-        margin: 0;
-        padding: 15px 10px 50px 60px;
-        text-align: left;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-dot,
-    .timeline-item:nth-child(even) .timeline-dot {
-        left: 11px;
-        right: auto;
-    }
-
-    .timeline-time {
-        font-size: 48px;
-    }
-
-    .timeline-item h3 {
-        font-size: 34px;
-    }
-}
-    <style>
-        :root {
-            --kirik-beyaz: #f7f4ee;
-            --krem: #eee5d8;
-            --kum: #d8c4aa;
-            --toprak: #a37c5b;
-            --zeytin: #6d7455;
-            --koyu-kahve: #3e332c;
-            --beyaz: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-<!-- Günün Akışı -->
-<section class="timeline-section">
-    <div class="timeline-container">
-
-        <div class="timeline-header">
-            <p class="timeline-small-title">
-                22 Ağustos 2026
-            </p>
-
-            <h2>
-                Günün akışı
-            </h2>
-        </div>
-
-        <div class="timeline">
-
-            <!-- İsteme -->
-            <article class="timeline-item">
-                <span class="timeline-dot"></span>
-
-                <span class="timeline-time">
-                    17.00
-                </span>
-
-                <span class="timeline-icon">
-                    ☕
-                </span>
-
-                <h3>
-                    Önce bir kahve
-                </h3>
-
-                <p>
-                    İsteme merasimimiz evimizin bahçesinde,
-                    ailelerimiz ve sevdiklerimizle başlayacak.
-
-                    <span class="timeline-note">
-                        Kahveler bizden, heyecan hepimizden.
-                    </span>
-                </p>
-            </article>
-
-            <!-- Nişan -->
-            <article class="timeline-item">
-                <span class="timeline-dot"></span>
-
-                <span class="timeline-time">
-                    19.00
-                </span>
-
-                <span class="timeline-icon">
-                    ♡
-                </span>
-
-                <h3>
-                    Kutlama zamanı
-                </h3>
-
-                <p>
-                    Nişan törenimiz Basınkent 1 Sitesi'nin
-                    yeşil alanında devam edecek.
-
-                    <span class="timeline-note">
-                        Biraz duygu, bolca mutluluk.
-                    </span>
-                </p>
-            </article>
-
-            <!-- After -->
-            <article class="timeline-item after-item">
-                <span class="timeline-dot"></span>
-
-                <span class="timeline-time">
-                    22.00
-                </span>
-
-                <span class="timeline-icon">
-                    ✦
-                </span>
-
-                <h3>
-                    Gece burada bitmiyor
-                </h3>
-
-                <p>
-                    Aynı yerde müzik, dans, bol ikram
-                    ve alkol standımızla eğlenceye devam ediyoruz.
-
-                    <span class="timeline-note">
-                        Rahat ayakkabılar ve yüksek enerji tavsiye edilir.
-                    </span>
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-        body {
-            font-family: "Manrope", sans-serif;
-            color: var(--koyu-kahve);
-            background: var(--kirik-beyaz);
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* AÇILIŞ EKRANI */
-
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 24px;
-            text-align: center;
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(216, 196, 170, 0.6),
-                    transparent 34%
-                ),
-                radial-gradient(
-                    circle at 85% 80%,
-                    rgba(109, 116, 85, 0.17),
-                    transparent 38%
-                ),
-                var(--kirik-beyaz);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            top: -230px;
-            left: -180px;
-            border: 1px solid rgba(109, 116, 85, 0.18);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 330px;
-            height: 330px;
-            right: -190px;
-            bottom: -180px;
-            border: 1px solid rgba(163, 124, 91, 0.24);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            width: min(850px, 100%);
-            position: relative;
-            z-index: 2;
-            animation: appear 1.2s ease forwards;
-        }
-
-        .small-title {
-            margin-bottom: 30px;
-            color: var(--zeytin);
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .names {
-            margin-bottom: 36px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(78px, 15vw, 160px);
-            font-weight: 500;
-            line-height: 0.76;
-            letter-spacing: -5px;
-        }
-
-        .ampersand {
-            display: block;
-            margin: 16px 0;
-            color: var(--toprak);
-            font-size: 0.5em;
-            font-style: italic;
-        }
-
-        .opening-text {
-            max-width: 590px;
-            margin: 0 auto 38px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(25px, 4vw, 37px);
-            line-height: 1.25;
-        }
-
-        .date {
-            margin-bottom: 34px;
-            color: var(--zeytin);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 200px;
-            min-height: 56px;
-            padding: 14px 30px;
-            border: 1px solid var(--koyu-kahve);
-            border-radius: 100px;
-            background: transparent;
-            color: var(--koyu-kahve);
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            transition:
-                background 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
-        }
-
-        .button:hover {
-            background: var(--koyu-kahve);
-            color: var(--kirik-beyaz);
-            transform: translateY(-3px);
-        }
-
-        /* DAVET BÖLÜMÜ */
-
-        .invitation {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 110px 24px;
-            background: var(--beyaz);
-        }
-
-        .invitation-content {
-            width: min(760px, 100%);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .coffee {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 62px;
-            height: 62px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(163, 124, 91, 0.35);
-            border-radius: 50%;
-            font-size: 25px;
-        }
-
-        .invitation h2 {
-            margin-bottom: 28px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(48px, 8vw, 82px);
-            font-weight: 500;
-            line-height: 1;
-        }
-
-        .invitation p {
-            max-width: 670px;
-            margin: 0 auto;
-            color: rgba(62, 51, 44, 0.78);
-            font-size: clamp(16px, 2vw, 19px);
-            line-height: 1.9;
-        }
-
-        .energy {
-            display: block;
-            margin-top: 24px;
-            color: var(--zeytin);
-            font-weight: 500;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 34px 20px;
-            }
-
-            .names {
-                font-size: 74px;
-                letter-spacing: -3px;
-            }
-
-            .opening-text {
-                font-size: 27px;
-            }
-
-            .invitation {
-                padding: 85px 22px;
-            }
-
-            .invitation p {
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe7">
+  <title>Gökçe & Ufuk | 22 Ağustos 2026</title>
+  <meta name="description" content="Gökçe ve Ufuk'un 22 Ağustos 2026 tarihli nişan davetiyesi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <p>Gökçe <span>♡</span> Ufuk</p>
+      <small>22 Ağustos 2026</small>
+      <i></i>
+    </div>
+  </div>
 
-    <!-- Açılış ekranı -->
-    <header class="hero">
-        <div class="hero-content">
+  <button class="menu-button" id="menuButton" aria-label="Menüyü aç" aria-expanded="false">
+    <span></span><span></span>
+  </button>
 
-            <p class="small-title">
-                Bir davetiniz var
-            </p>
+  <nav class="menu" id="menu">
+    <a href="#davet">Davet</a>
+    <a href="#hikaye">Hikâyemiz</a>
+    <a href="#sayac">Geri Sayım</a>
+    <a href="#akis">Günün Akışı</a>
+    <a href="#konum">Konum</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#katilim">Katılım</a>
+  </nav>
 
-            <h1 class="names">
-                Gökçe
-                <span class="ampersand">&</span>
-                Ufuk
-            </h1>
-
-            <p class="opening-text">
-                22 Ağustos'ta yeni bir hikâye başlıyor.
-                En güzel satırlarını ise sizinle birlikte yazacağız.
-            </p>
-
-            <p class="date">
-                22 Ağustos 2026 · Cumartesi
-            </p>
-
-            <a href="#davet" class="button">
-                Davetiyeyi Aç
-            </a>
-
-        </div>
-    </header>
-
-    <!-- Davet metni -->
-    <section class="invitation" id="davet">
-        <div class="invitation-content">
-
-            <div class="coffee">☕</div>
-
-            <h2>
-                Önce bir kahve içelim.
-            </h2>
-
-            <p>
-                Sonra birlikte gülelim, eğlenelim ve bu özel günü
-                unutulmaz anılarla taçlandıralım.
-
-                <br><br>
-
-                Çünkü en güzel kutlamalar,
-                sevdiklerimiz yanımızdayken güzeldir.
-
-                <strong class="energy">
-                    Enerjinizi yanınıza almayı unutmayın.
-                </strong>
-            </p>
-
-        </div>
+  <main>
+    <section class="hero" id="anasayfa">
+      <img src="assets/gunbatimi-kollar.jpg" alt="Gökçe ve Ufuk gün batımında" class="hero-image">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Bir davetiniz var</p>
+        <h1>Gökçe <span>&</span> Ufuk</h1>
+        <p class="hero-copy">22 Ağustos'ta yeni bir hikâye başlıyor.<br>En güzel satırlarını ise sizinle birlikte yazacağız.</p>
+        <p class="hero-date">22 Ağustos 2026 · Cumartesi</p>
+        <a class="glass-button" href="#davet">Davetiyeyi Aç</a>
+      </div>
+      <a class="scroll-cue" href="#davet" aria-label="Aşağı kaydır">
+        <span></span>
+      </a>
     </section>
 
+    <section class="section invitation" id="davet">
+      <div class="narrow reveal">
+        <p class="symbol">☕</p>
+        <h2>Önce bir kahve içelim.</h2>
+        <p>
+          Sonra birlikte gülelim, eğlenelim ve bu özel günü unutulmaz anılarla taçlandıralım.
+          Çünkü en güzel kutlamalar, sevdiklerimiz yanımızdayken güzeldir.
+        </p>
+        <strong>Enerjinizi yanınıza almayı unutmayın.</strong>
+      </div>
+    </section>
+
+    <section class="story" id="hikaye">
+      <div class="story-photo reveal">
+        <img src="assets/yuruyus.jpg" alt="Gökçe ve Ufuk el ele yürürken">
+      </div>
+      <div class="story-copy reveal">
+        <p class="eyebrow">Bizim hikâyemiz</p>
+        <h2>Her güzel hikâye küçük bir adımla başlar.</h2>
+        <p>Bizimkisi de birlikte atılan nice adımla bugüne geldi. Şimdi en güzel günlerimizden birini sizinle paylaşmaya hazırlanıyoruz.</p>
+      </div>
+    </section>
+
+    <section class="section countdown-section" id="sayac">
+      <div class="wide reveal">
+        <p class="eyebrow">Büyük güne kalan</p>
+        <div class="countdown">
+          <div><b id="days">00</b><span>Gün</span></div>
+          <div><b id="hours">00</b><span>Saat</span></div>
+          <div><b id="minutes">00</b><span>Dakika</span></div>
+          <div><b id="seconds">00</b><span>Saniye</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="akis">
+      <div class="section-heading reveal">
+        <p class="eyebrow">22 Ağustos 2026</p>
+        <h2>Günün akışı</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item day reveal">
+          <time>17.00</time>
+          <div>
+            <p class="icon">☕</p>
+            <h3>Önce bir kahve</h3>
+            <p>İsteme merasimimiz evimizin bahçesinde, ailemiz ve sevdiklerimizle başlayacak.</p>
+            <small>Kahveler bizden, heyecan hepimizden.</small>
+          </div>
+        </article>
+
+        <article class="timeline-item sunset reveal">
+          <time>19.00</time>
+          <div>
+            <p class="icon">♡</p>
+            <h3>Kutlama zamanı</h3>
+            <p>Nişan törenimiz Basınkent 1 Sitesi'nin yeşil alanında devam edecek.</p>
+            <small>Biraz duygu, bolca mutluluk.</small>
+          </div>
+        </article>
+
+        <article class="timeline-item night reveal">
+          <time>22.00</time>
+          <div>
+            <p class="icon">✦</p>
+            <h3>Gece burada bitmiyor</h3>
+            <p>Aynı yerde müzik, dans, bol ikram ve alkol standımızla eğlenceye devam ediyoruz.</p>
+            <small>Rahat ayakkabılar ve yüksek enerji tavsiye edilir.</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature-photo">
+      <img src="assets/cicek-yatay.jpg" alt="Gün batımında çiçek tarlasında Gökçe ve Ufuk">
+      <div class="feature-overlay"></div>
+      <p class="reveal">Bazı anlar hiç bitmesin istersin.</p>
+    </section>
+
+    <section class="section location" id="konum">
+      <div class="narrow reveal">
+        <p class="eyebrow">Buluşma noktası</p>
+        <h2>Sizi burada bekliyoruz.</h2>
+        <p>Silivri Basınkent 1 Sitesi · Yeşil Alan</p>
+        <a class="button" href="https://maps.google.com" target="_blank" rel="noopener">Yol Tarifi Al</a>
+        <small class="helper">Bu bağlantıyı daha sonra gerçek konum linkinizle değiştireceğiz.</small>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeri">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Bizden birkaç kare</p>
+        <h2>Olduğumuz gibi.</h2>
+      </div>
+      <div class="gallery">
+        <figure class="tall reveal"><img src="assets/gunbatimi-sirt.jpg" alt="Gün batımında eğlenceli bir an"></figure>
+        <figure class="wide reveal"><img src="assets/kosk.jpg" alt="Gökçe ve Ufuk birlikte"></figure>
+        <figure class="square reveal"><img src="assets/yuzuk.jpg" alt="Yüzük fotoğrafı"></figure>
+        <figure class="tall reveal"><img src="assets/vapur.jpg" alt="Vapurda birlikte"></figure>
+        <figure class="wide reveal"><img src="assets/cicek-dikey.jpg" alt="Çiçek tarlasında gün batımı"></figure>
+      </div>
+    </section>
+
+    <section class="after-section">
+      <img src="assets/after.jpg" alt="Gökçe ve Ufuk gece eğlencesinde">
+      <div class="after-overlay"></div>
+      <div class="after-copy reveal">
+        <p class="eyebrow">After party</p>
+        <h2>Gece burada bitmiyor.</h2>
+        <p>Müzik. Dans. Bol ikram. Bol kahkaha.<br>Ve unutulmayacak anılar.</p>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="katilim">
+      <div class="narrow reveal">
+        <p class="eyebrow">Katılım bildirimi</p>
+        <h2>Bu güzel günü bizimle paylaşacak mısınız?</h2>
+        <p>Organizasyon hazırlıklarımız için katılım durumunuzu bildirmenizi rica ediyoruz.</p>
+        <div class="rsvp-actions">
+          <a class="button" href="#" aria-disabled="true">Evet, oradayım</a>
+          <a class="button button-outline" href="#" aria-disabled="true">Maalesef gelemiyorum</a>
+        </div>
+        <small class="helper">Bu iki butonu Google Form bağlantınıza bağlayacağız.</small>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <img src="assets/cicek-yatay.jpg" alt="">
+      <div class="footer-overlay"></div>
+      <div class="footer-copy reveal">
+        <p>Bu geceyi bizimle paylaşacağınız için şimdiden teşekkür ederiz.</p>
+        <h2>Gökçe <span>♡</span> Ufuk</h2>
+        <small>22 Ağustos 2026</small>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
