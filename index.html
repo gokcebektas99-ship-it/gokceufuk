@@ -2,12 +2,708 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gökçe & Ufuk</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gökçe & Ufuk | 22 Ağustos 2026</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --kirik-beyaz: #f7f4ee;
+            --krem: #ede4d6;
+            --kum: #d7c4aa;
+            --toprak: #a47c5b;
+            --zeytin: #6f7653;
+            --koyu-kahve: #3f332b;
+            --beyaz: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            background: var(--kirik-beyaz);
+            color: var(--koyu-kahve);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: clamp(42px, 7vw, 78px);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-text {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(63, 51, 43, 0.8);
+        }
+
+        /* Açılış */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(215, 196, 170, 0.45),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(111, 118, 83, 0.16),
+                    transparent 40%
+                ),
+                var(--kirik-beyaz);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border: 1px solid rgba(111, 118, 83, 0.25);
+            border-radius: 50%;
+        }
+
+        .hero::before {
+            top: -100px;
+            left: -100px;
+        }
+
+        .hero::after {
+            right: -120px;
+            bottom: -120px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: var(--zeytin);
+            margin-bottom: 26px;
+        }
+
+        .hero h1 {
+            font-size: clamp(72px, 15vw, 170px);
+            line-height: 0.85;
+            margin-bottom: 30px;
+        }
+
+        .hero-date {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(24px, 4vw, 38px);
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            max-width: 520px;
+            margin: 0 auto 40px;
+            font-size: 16px;
+            color: rgba(63, 51, 43, 0.75);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 190px;
+            min-height: 54px;
+            padding: 14px 28px;
+            border: 1px solid var(--koyu-kahve);
+            border-radius: 999px;
+            background: transparent;
+            color: var(--koyu-kahve);
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .button:hover {
+            background: var(--koyu-kahve);
+            color: var(--kirik-beyaz);
+            transform: translateY(-2px);
+        }
+
+        .button-light {
+            border-color: rgba(255, 255, 255, 0.75);
+            color: var(--beyaz);
+        }
+
+        .button-light:hover {
+            background: var(--beyaz);
+            color: var(--koyu-kahve);
+        }
+
+        /* Davet metni */
+
+        .invitation {
+            background: var(--beyaz);
+        }
+
+        .invitation-mark {
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 70px;
+            color: var(--toprak);
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        /* Geri sayım */
+
+        .countdown-section {
+            background: var(--krem);
+        }
+
+        .countdown {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(164, 124, 91, 0.18);
+            padding: 34px 14px;
+            text-align: center;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .countdown-number {
+            display: block;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            display: block;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--toprak);
+        }
+
+        /* Program */
+
+        .program {
+            background: var(--kirik-beyaz);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 55px;
+        }
+
+        .program-card {
+            min-height: 260px;
+            padding: 40px 28px;
+            background: var(--beyaz);
+            border-radius: 24px;
+            border: 1px solid rgba(63, 51, 43, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .program-number {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 72px;
+            color: rgba(164, 124, 91, 0.24);
+            line-height: 1;
+        }
+
+        .program-card h3 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .program-time {
+            color: var(--zeytin);
+            font-weight: 600;
+        }
+
+        /* Konum */
+
+        .location {
+            background: var(--zeytin);
+            color: var(--beyaz);
+            text-align: center;
+        }
+
+        .location .section-text {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .location-card {
+            max-width: 750px;
+            margin: 45px auto 0;
+            padding: 50px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .location-card h3 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .location-card p {
+            margin-bottom: 28px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* After */
+
+        .after {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(164, 124, 91, 0.22),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(215, 196, 170, 0.14),
+                    transparent 35%
+                ),
+                #2e2722;
+            color: var(--beyaz);
+        }
+
+        .after::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px);
+            background-size: 45px 45px;
+            opacity: 0.12;
+        }
+
+        .after-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .after h2 {
+            font-size: clamp(60px, 10vw, 120px);
+            margin-bottom: 20px;
+        }
+
+        .after p {
+            max-width: 590px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 17px;
+        }
+
+        /* RSVP */
+
+        .rsvp {
+            background: var(--krem);
+            text-align: center;
+        }
+
+        .rsvp-buttons {
+            margin-top: 42px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: var(--kirik-beyaz);
+        }
+
+        footer h2 {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--toprak);
+        }
+
+        /* Mobil görünüm */
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 75px 0;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-card {
+                min-height: 220px;
+            }
+
+            .hero h1 {
+                font-size: 80px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 66px;
+            }
+
+            .hero-date {
+                font-size: 25px;
+            }
+
+            .countdown-box {
+                padding: 26px 10px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+        }
+    </style>
 </head>
-<body style="font-family:Arial;text-align:center;margin-top:100px;background:#f8f5f2;">
-    <h1>💍 Gökçe & Ufuk</h1>
-    <h2>22 Ağustos 2026</h2>
-    <p>Web sitemiz yapım aşamasında.</p>
+
+<body>
+
+    <!-- Açılış Bölümü -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">Bir davetiniz var</p>
+
+            <h1>Gökçe<br>& Ufuk</h1>
+
+            <p class="hero-date">22 Ağustos 2026</p>
+
+            <p class="hero-subtitle">
+                Birlikte yeni bir hikâyeye adım atarken,
+                bu özel günü sizinle paylaşmak istiyoruz.
+            </p>
+
+            <a href="#davet" class="button">
+                Davetiyeyi Aç
+            </a>
+        </div>
+    </header>
+
+    <!-- Davet Metni -->
+    <section class="section invitation" id="davet">
+        <div class="container">
+            <div class="invitation-mark">“</div>
+
+            <h2 class="section-title">
+                Bu güzel başlangıçta
+                yanımızda olun
+            </h2>
+
+            <p class="section-text">
+                Hayatımızın en özel anlarından birini,
+                sevdiklerimizle birlikte kutlamak istiyoruz.
+                Samimi bir kır akşamında başlayan kutlamamız,
+                müzik ve dansla gece boyunca devam edecek.
+            </p>
+        </div>
+    </section>
+
+    <!-- Geri Sayım -->
+    <section class="section countdown-section">
+        <div class="container">
+            <h2 class="section-title">
+                Büyük güne kalan
+            </h2>
+
+            <p class="section-text">
+                Takvimler 22 Ağustos 2026'yı gösterdiğinde
+                hep birlikte aynı hikâyenin parçası olacağız.
+            </p>
+
+            <div class="countdown">
+                <div class="countdown-box">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Gün</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Saat</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Dakika</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Saniye</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program -->
+    <section class="section program">
+        <div class="container">
+            <h2 class="section-title">
+                Gecenin akışı
+            </h2>
+
+            <p class="section-text">
+                Doğanın içinde başlayan kutlamamız,
+                ilerleyen saatlerde bol müzikli ve bol danslı
+                bir geceye dönüşecek.
+            </p>
+
+            <div class="program-grid">
+                <article class="program-card">
+                    <span class="program-number">01</span>
+
+                    <div>
+                        <h3>Karşılama</h3>
+                        <p class="program-time">19.00</p>
+                    </div>
+                </article>
+
+                <article class="program-card">
+                    <span class="program-number">02</span>
+
+                    <div>
+                        <h3>Nişan & Kutlama</h3>
+                        <p class="program-time">20.00</p>
+                    </div>
+                </article>
+
+                <article class="program-card">
+                    <span class="program-number">03</span>
+
+                    <div>
+                        <h3>After Party</h3>
+                        <p class="program-time">22.30</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konum -->
+    <section class="section location">
+        <div class="container">
+            <h2 class="section-title">
+                Buluşma noktası
+            </h2>
+
+            <p class="section-text">
+                Doğanın içinde, samimi ve sıcak bir akşam için
+                sizi aramızda görmekten mutluluk duyacağız.
+            </p>
+
+            <div class="location-card">
+                <h3>Silivri Basınkent 1 Sitesi</h3>
+
+                <p>Yeşil Alan</p>
+
+                <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-light"
+                >
+                    Yol Tarifi Al
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- After Party -->
+    <section class="section after">
+        <div class="container after-content">
+            <p class="eyebrow">Gece burada bitmiyor</p>
+
+            <h2>After Party</h2>
+
+            <p>
+                Gecenin devamında müzik, dans ve bolca eğlence var.
+                Rahat ayakkabılarınızı ve yüksek enerjinizi unutmayın.
+            </p>
+        </div>
+    </section>
+
+    <!-- Katılım -->
+    <section class="section rsvp">
+        <div class="container">
+            <h2 class="section-title">
+                Bizimle olacak mısınız?
+            </h2>
+
+            <p class="section-text">
+                Organizasyon hazırlıklarımızı tamamlayabilmemiz için
+                katılım durumunuzu bizimle paylaşabilirsiniz.
+            </p>
+
+            <div class="rsvp-buttons">
+                <a
+                    href="#"
+                    class="button"
+                >
+                    Katılıyorum
+                </a>
+
+                <a
+                    href="#"
+                    class="button"
+                >
+                    Katılamıyorum
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <h2>Gökçe & Ufuk</h2>
+        <p>22 Ağustos 2026</p>
+    </footer>
+
+    <script>
+        const weddingDate = new Date("2026-08-22T19:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance <= 0) {
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+            const seconds = Math.floor(
+                (distance % (1000 * 60)) /
+                1000
+            );
+
+            document.getElementById("days").textContent =
+                String(days).padStart(2, "0");
+
+            document.getElementById("hours").textContent =
+                String(hours).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+                String(minutes).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+                String(seconds).padStart(2, "0");
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
 </body>
 </html>
